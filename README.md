@@ -8,8 +8,8 @@ Rudimentary records are kept and stored in a pickled object at the end of the ru
 The park configuration file (config_park.csv) is a simple format with one line per venue.  A few venue types are listed to allow for differentiated experiences according to the venue type (ride, restaurant, etc.) eventually, but no such behavior is currently implemented.  The locations of each venue are derived from the pixel locations in the included park image.  There is a hard-coded scaling factor currently used to make travel time somewhat reflect actual travel times, for this particular source image size. 
 
 **Execution**
-Run the simulator by simply executing it as a script 'python3 parksim.py'
-It will create a parksim_records.p pickle object for post-processing the simulation
+- Run the simulator by simply executing it as a script 'python3 parksim.py'
+- It will create a parksim_records.p pickle object for post-processing the simulation
 
 **To Do**
 - improve the ride choice algorithm to include locality
