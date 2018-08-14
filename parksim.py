@@ -205,6 +205,20 @@ def printAttractionInformation():
               'visitors with average wait time of',average_wait,
               'and ',attracts[attract]['reneged_count'],' who gave up')
 
+# the attraction dictionary contains SimPy objects, so it isn't good to serialize out. Copy the contents
+# out of the archive and return a simple dictionary
+def generateSerializableVenueRecords(attracts):
+    outdict = {}
+    for venue in attracts:
+        outdict[attracts[venue]['name']] = {}
+        outdict[attracts[venue]['name']]['name'] = attracts[venue]['name']
+        outdict[attracts[venue]['name']]['type'] = attracts[venue]['type']
+        outdict[attracts[venue]['name']]['desirability'] = attracts[venue]['desirability']
+        outdict[attracts[venue]['name']]['wait_times'] = attracts[venue]['wait_times']
+        outdict[attracts[venue]['name']]['visitor_count'] = attracts[venue]['visitor_count']
+        outdict[attracts[venue]['name']]['reneged_count'] = attracts[venue]['reneged_count']
+        outdict[attracts[venue]['name']]['events'] = attracts[venue]['resource'].data
+    return outdict
 
 #---------------- main loop -------------------
 
@@ -217,7 +231,9 @@ print('Mini park with renege')
 random.seed(RANDOM_SEED)
 env = simpy.Environment()
 
+# global disctionary of all the venues (rides, restaurants, etc)
 attracts = {}
+
 for index, row in attractList.iterrows():
     rowlist = row.tolist()
     thisname = rowlist[0]
@@ -253,7 +269,8 @@ env.run()
 printVisitorInformation()
 printAttractionInformation()
 
-# make records object
-records = {'attractions': attracts, 'guests':customers}
+# make output records object
+venue_records = generateSerializableVenueRecords(attracts)
+records = {'attractions': venue_records, 'guests':customers}
 print('storing records of the day in the park')
 pickle.dump( records, open( "parksim_records.p", "wb" ) )
