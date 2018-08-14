@@ -1,0 +1,16 @@
+name,  mapnumber, type, desirability, capacity, length, x, y
+Walt Disney Railroad, 1, ride, 2, 100, 20, 586, 925
+Harmony Barber Shop, 4, service, 1, 5, 20, 780, 670
+Plaza Restaurant, 9, restaurant, 1, 20, 15, 633,672
+Crystal Palace, 11, restaurant, 3, 200, 30, 497, 657
+Swiss Family Treehouse, 15, ride, 2, 40, 10, 355, 600
+Magic Carpets of Aladdin, 16, ride, 3, 25, 10, 265,617
+Jungle Cruise, 17, ride, 6, 120, 10, 274, 677
+Enchanted Tiki Room, 18, ride, 4, 100, 30, 235,639
+Pirates of the Caribbean, 19, ride, 8, 150, 15, 160, 655
+Sunshine Tree Terrace, 21, restaurant, 2, 4, 4, 400, 600
+Splash Mountain, 26, ride, 9, 40, 6, 60, 438
+Big Thunder Mountain Railroad, 28, ride, 8, 64, 8, 109, 380
+Haunted Mansion, 37, ride, 8, 100, 10, 345, 310
+Hall of Presidents, 35, ride, 8, 150, 45, 740, 650
+Space Mountain, 72, ride, 12, 50, 6, 1042, 537
