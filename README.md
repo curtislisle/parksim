@@ -14,3 +14,4 @@ The park configuration file (config_park.csv) is a simple format with one line p
 **To Do**
 - improve the ride choice algorithm to include locality
 - Add a time-specific wave of visitors, instead of a steady flow (use distributions from the python random package)
+- Refactor routines so parksim can be included as a module in user programs / notebooks. 
